@@ -14,7 +14,7 @@
 				$query=mysqli_query($con,$q);
 				while($res = mysqli_fetch_array($query)){
 		?>
-					
+					 
 					
 					<tr class="text-center">
 						 <td><?php echo $res['docid']; ?></td>   
