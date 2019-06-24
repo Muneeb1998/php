@@ -1,0 +1,7 @@
+<?php
+include 'db_connect.php';
+$id=$_GET['id'];
+$q="DELETE FROM `docinfo` WHERE docid=$id";
+mysqli_query($con,$q);
+header('location: ADview.php');
+?>
