@@ -1,0 +1,32 @@
+<table class="table table-striped table-hover table-bordered">
+				
+					<tr class="bg-dark text-white text-center">
+						 <th> ID </th>
+						<th> Doctor name</th>
+						<th> Doctor Position </th>
+						<th> Delete </th>
+						<th> Update </th>
+					</tr>
+					
+		<?php
+				include 'db_connect.php';
+				$q= "select * from docinfo ";
+				$query=mysqli_query($con,$q);
+				while($res = mysqli_fetch_array($query)){
+		?>
+					
+					
+					<tr class="text-center">
+						 <td><?php echo $res['docid']; ?></td>   
+						<td> <?php echo $res['docname']; ?> </td>
+						<td> <?php echo $res['docpos']; ?></td>
+						<td><button class="btn-danger btn "> <a href="delete.php?id=<?php echo $res ['docid']; ?>" class="text-white" >Delete </a></button> </td>
+						<td><button class="btn-primary btn "> <a href="update.php?id=<?php echo $res ['docid']; ?>"class="text-white" >Update </a></button> </td>
+					</tr>
+				<?php
+					}
+				?>
+				
+				
+				
+				</table>
